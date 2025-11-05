@@ -9,8 +9,7 @@ interface ProductPageProps {
 export default async function ProductPage({ params }: ProductPageProps) {
   const { id } = await params;
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-  const response = await fetch(`${baseUrl}/api/produtos`, { cache: "no-store" });
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL ?? ""}/api/produtos`, { cache: "no-store" });
   const allProducts: Product[] = await response.json();
   const product = allProducts.find(p => p.id === Number(id));
 
