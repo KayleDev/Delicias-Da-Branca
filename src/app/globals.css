@@ -1,10 +1,18 @@
 @import "tailwindcss";
 
-:root {
-  --text-primary-color: #23001B;
-  --background-primary-color: #FCFCFC;
-  --text-secondary-color: #A4007E;
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --heading-color: #23001B;
+  --secondary-color: #FCFCFC;
+  --tertiary-color: #A4007E;
   --button-color: #FF7BA9;
   --hover-button-color: #E26D96;
   --links-color: #851B00;
+}
+
+body {
+  font-family: var(--poppins-font), sans-serif;
 }
